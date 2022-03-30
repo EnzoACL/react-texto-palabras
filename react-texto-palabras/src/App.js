@@ -3,21 +3,19 @@ import './App.css';
 import ComponentLetras from './components/Letras/Letras'
 
 function App() {
-  let counter=0
-  function writingInTextBoxHandler() {
-    setContadorLetras(counter + 1)
+  const [text, setText] = useState("")
+  function writingInTextBoxHandler(event) {
+    setText(event.target.value)
+    console.log({ text })
   }
-  const [contadorLetras, setContadorLetras]=useState()
-   
   
 return (
-<>
-  <h1>Texto</h1>
-    <textarea onChange={writingInTextBoxHandler}></textarea>
-    <ComponentLetras letras={contadorLetras}></ComponentLetras>
-  
-  
-</>
-);
+    <>
+      <h1>Texto</h1>
+      <textarea onChange={writingInTextBoxHandler} value={text}></textarea>
+      <ComponentLetras letras={text}/>
+    
+    </>
+  );
 }
 export default App

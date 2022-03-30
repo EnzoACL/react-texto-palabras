@@ -1,9 +1,9 @@
-function ComponentLetras ({letras}){
-    return(
+function ComponentLetras(props) {
+    return (
         <>
-        <h1>Letras</h1>
-            <input type="text" value={letras}></input>
+            <p>Contador de letras</p>
+            <p>Total de letras: {props.letras.length}</p>
         </>
-    )
+    );
 }
 export default ComponentLetras
